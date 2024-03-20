@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Input } from '../Input'
+import { DataContext } from '../../context/DataContext'
 
 export const DateRange = () => {
-  const [inicio, setInicio] = useState('')
-  const [final, setFinal] = useState('')
+
+  const {inicio,final, changeStartDate,changeEndDate} = useContext(DataContext);
+
   return (
     <form>
-      <Input label='Início' value={inicio} onChange={({target})=> setInicio(target.value)}/>
-      <Input label='Final' value={final} onChange={({target})=> setFinal(target.value)}/>
+      <Input label='Início' value={inicio} onChange={({target}) =>changeStartDate(target.value)}/>
+      <Input label='Final' value={final} onChange={({target})=> changeEndDate(target.value)}/>
     </form>
   )
 }

@@ -1,4 +1,5 @@
 import { ComponentProps } from "react";
+import { Container } from "./style";
 
 type InputProps = ComponentProps<"input"> & {
   label: string;
@@ -6,9 +7,9 @@ type InputProps = ComponentProps<"input"> & {
 
 export const Input = ({ label, ...props }: InputProps) => {
   return (
-    <div>
+    <Container>
       <label htmlFor={label}>{label}</label>
       <input id={label} name={label} type="date" {...props} />
-    </div>
+    </Container>
   );
 };

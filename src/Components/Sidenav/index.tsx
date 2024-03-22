@@ -1,29 +1,52 @@
-import { House, Storefront } from "@phosphor-icons/react";
-import { NavLink } from "react-router-dom";
-
+import { Gear, House, Storefront } from "@phosphor-icons/react";
+import { NavLink, useLocation } from "react-router-dom";
+import { ContainerSide, Nav } from "./style";
+import { useContext, useEffect } from "react";
+import { DataContext } from "../../context/DataContext";
 
 export const Sidenav = () => {
+  const { linkActive, changeLinkActive } = useContext(DataContext);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      changeLinkActive('/');
+    } else if (location.pathname === "/sales") {
+      changeLinkActive("/sales");
+    }
+  }, [changeLinkActive, location]);
+
   return (
-    <div>
+    <ContainerSide>
       <h1>Control System</h1>
-      <nav>
+      <Nav>
         <ul>
-          <li>
+          <div>
+          <li className={linkActive === '/'  ? "active-link" : ''}>
             <span>
               {" "}
-              <House />{" "}
+              <House color="#fff" weight="bold" size={24} />{" "}
             </span>
             <NavLink to="/">Resumo</NavLink>
           </li>
-          <li>
+          <li className={linkActive === '/sales'  ? "active-link" : ''}>
             <span>
               {" "}
-              <Storefront />{" "}
+              <Storefront color="#fff" weight="bold" size={24} />
             </span>
             <NavLink to="/sales">Vendas</NavLink>
           </li>
+          </div>
+          <li style={{marginTop:'2rem'}}>
+            <span>
+              {" "}
+              <Gear color="#fff" weight="bold" size={24} />
+            </span>
+            <a>Configurções</a>
+          </li>
         </ul>
-      </nav>
-    </div>
+      </Nav>
+    </ContainerSide>
   );
 };

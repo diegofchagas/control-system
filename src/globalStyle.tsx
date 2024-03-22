@@ -16,8 +16,10 @@ body{
   font-size:1rem;
 }
 
-.box{
+.container{
   display:grid;
+  grid-template-columns: 15rem auto;
+  padding: 1.25rem;
   gap:1.25rem;
 }
 

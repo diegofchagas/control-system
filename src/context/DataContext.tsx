@@ -7,8 +7,10 @@ export type DataContextProps = {
   error: string | null;
   inicio: string;
   final: string;
+  linkActive: string;
   changeStartDate: (date: string) => void;
   changeEndDate: (date: string) => void;
+  changeLinkActive: (link:string)=> void;
 };
 
 export type DataSalesProps = {
@@ -26,6 +28,7 @@ export const DataContext = createContext({} as DataContextProps);
 export const DataContextProvider = ({ children }: PropsWithChildren) => {
   const [inicio, setInicio] = useState("");
   const [final, setFinal] = useState("");
+  const [linkActive, setLinkActive] = useState("")
 
   const { data, loading, error } = useFetch<DataSalesProps[]>(
     `https://data.origamid.dev/vendas/?inicio=${inicio}&final=${final}`
@@ -39,6 +42,10 @@ export const DataContextProvider = ({ children }: PropsWithChildren) => {
     setFinal(date);
   };
 
+  const changeLinkActive = (link: string) =>{
+    setLinkActive(link)
+  }
+
   return (
     <DataContext.Provider
       value={{
@@ -49,6 +56,8 @@ export const DataContextProvider = ({ children }: PropsWithChildren) => {
         final,
         changeStartDate,
         changeEndDate,
+        changeLinkActive,
+        linkActive
       }}
     >
       {children},

@@ -14,6 +14,8 @@ box-sizing:border-box;
 
 body{
   font-size:1rem;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container{
@@ -21,6 +23,12 @@ body{
   grid-template-columns: 15rem auto;
   padding: 1.25rem;
   gap:1.25rem;
+}
+
+@media (max-width:768px) {
+  html{
+    font-size: 87.5%;
+  }
 }
 
 `;

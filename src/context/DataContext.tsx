@@ -1,7 +1,7 @@
 import { PropsWithChildren, createContext, useState } from "react";
 import { useFetch } from "../Hooks/useFetch";
 
-type DataContextProps = {
+export type DataContextProps = {
   data: DataSalesProps[] | null;
   loading: boolean;
   error: string | null;
@@ -11,7 +11,7 @@ type DataContextProps = {
   changeEndDate: (date: string) => void;
 };
 
-type DataSalesProps = {
+export type DataSalesProps = {
   id: number;
   nome: string;
   preco: number;

@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import { SalesCharts } from "../../Components/SalesCharts";
+import { BoxContainer, ChartContainer, SummaryContainer } from "./style";
 
 export const Summary = () => {
   const { data } = useContext(DataContext);
   return (
     <section>
-      <div>
-        <div className="vendas">
+      <SummaryContainer>
+        <BoxContainer>
           <h2>Vendas</h2>
           <span>
             {data
@@ -19,9 +20,9 @@ export const Summary = () => {
                 currency: "BRL",
               })}
           </span>
-        </div>
+        </BoxContainer>
 
-        <div className="recebido">
+        <BoxContainer>
           <h2>Recebido</h2>
           <span>
             {data
@@ -34,10 +35,10 @@ export const Summary = () => {
                 currency: "BRL",
               })}
           </span>
-        </div>
+        </BoxContainer>
 
-        <div className="processando">
-          <h2>Recebido</h2>
+        <BoxContainer className="processando">
+          <h2>Processando</h2>
           <span>
             {data
               ?.filter((item) => item.status === "processando")
@@ -49,12 +50,13 @@ export const Summary = () => {
                 currency: "BRL",
               })}
           </span>
-        </div>
-      </div>
-      <div>
-        <h2>Gráfico de Vendas</h2>
-       {data && <SalesCharts data={data}/> } 
-      </div>
+        </BoxContainer>
+      </SummaryContainer>
+
+      <ChartContainer>
+        {data && <SalesCharts data={data}/> } 
+      </ChartContainer>
+
     </section>
   );
 };

@@ -5,13 +5,14 @@ export const Button = styled.button`
   border:none;
   border-radius:6px;
   font-family: "Inter", sans-serif;
-  font-size:.875rem;
-  font-weight:700;
-  padding: .656rem 1rem;
+  font-size:1rem;
+  font-weight:600;
+  padding: 1rem 1rem;
   line-height:1rem;
   color: #fff;
   cursor: pointer;
   transition:background-color 1s;
+  text-transform:capitalize;
 
   &:hover{
     background-color:#19A6EF;

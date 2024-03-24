@@ -16,6 +16,7 @@ body{
   font-size:1rem;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-color:#FFF;
 }
 
 .container{

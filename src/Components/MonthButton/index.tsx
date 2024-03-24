@@ -3,6 +3,7 @@ import { format, addMonths, startOfMonth, endOfMonth } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { useContext } from 'react';
 import { DataContext } from '../../context/DataContext';
+import { Button } from './style';
 
 export const MontButton = ({month}:{month:number}) => {
 
@@ -22,6 +23,6 @@ export const MontButton = ({month}:{month:number}) => {
   }
 
   return (
-    <button onClick={()=> setMounth(month)}>{nameMonth(month)}</button>
+    <Button onClick={()=> setMounth(month)}>{nameMonth(month)}</Button>
   )
 }

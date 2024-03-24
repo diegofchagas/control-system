@@ -45,11 +45,11 @@ export const SalesCharts = ({data}:DataChartSalesProps) => {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="pago" stroke="#A36AF9" strokeWidth={3} />
+      <Line type="monotone" dataKey="pago" stroke="#19A6EF" strokeWidth={3} />
       <Line
         type="monotone"
         dataKey="processando"
-        stroke="#FBCB21"
+        stroke="#214889"
         strokeWidth={3}
       />
       <Line

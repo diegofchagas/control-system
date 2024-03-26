@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { MontButton } from '../MonthButton'
 import { ButtonsContainer } from './style'
 

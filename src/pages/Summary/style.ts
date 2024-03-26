@@ -8,6 +8,10 @@ export const SummaryContainer = styled.div`
   font-weight: 600;
   margin-top:1rem;
   margin-bottom:2rem;
+
+  @media (max-width:1000px) {
+    flex-direction:column;
+  }
 `;
 
 export const BoxContainer = styled.div`

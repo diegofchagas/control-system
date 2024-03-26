@@ -1,16 +1,17 @@
 import React from 'react'
 
 import { MontButton } from '../MonthButton'
+import { ButtonsContainer } from './style'
 
 export const Months = () => {
 
 
   return (
-    <div style={{display:'flex', gap:'1rem'}}>
+    <ButtonsContainer>
       <MontButton month={-3}/>
       <MontButton month={-2}/>
       <MontButton month={-1}/>
       <MontButton month={0}/>
-    </div>
+    </ButtonsContainer>
   )
 }

@@ -32,6 +32,10 @@ body{
   html{
     font-size: 87.5%;
   }
+
+  .container{
+    grid-template-columns: 1fr;
+  }
 }
 
 `;

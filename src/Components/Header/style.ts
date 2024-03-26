@@ -5,7 +5,12 @@ display:grid;
 align-items:center;
 grid-template-columns: 300px auto;
 
-> div{
+@media (max-width:1000px) {
+  grid-template-columns: auto;
+}
+`;
+
+export const MonthsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,5 +23,4 @@ grid-template-columns: 300px auto;
     font-weight: 700;
     color: #214889;
   }
-}
 `;

@@ -19,4 +19,8 @@ export const CardContainer = styled.div`
   > div a {
     color: #214889;
   }
+
+  @media (max-width:700px) {
+    grid-template-columns:1fr;
+  }
 `;

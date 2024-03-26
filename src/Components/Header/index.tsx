@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DateRange } from "../DateRange";
 import { Months } from "../Months";
 import { useLocation } from "react-router-dom";
-import { HeaderContainer } from "./style";
+import { HeaderContainer,MonthsContainer } from "./style";
 
 export const Header = () => {
   const [link, setLink] = useState("Resumo");
@@ -19,10 +19,10 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <DateRange />
-      <div>
+      <MonthsContainer>
         <h2>{link}</h2>
         <Months />
-      </div>
+      </MonthsContainer>
     </HeaderContainer>
   );
 };

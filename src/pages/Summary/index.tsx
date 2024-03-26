@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 import { SalesCharts } from "../../Components/SalesCharts";
 import { BoxContainer, ChartContainer, SummaryContainer } from "./style";
+import { Loading } from "../../Components/Loading";
 
 export const Summary = () => {
-  const { data } = useContext(DataContext);
+  const { data,loading } = useContext(DataContext);
+
+  if (loading === true) return <Loading />;
   return (
     <section>
       <SummaryContainer>

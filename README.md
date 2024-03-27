@@ -41,7 +41,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### 🆙 Atualizações futuras
 
-- Melhorar responsividade ao projeto.
+- Melhoraria na responsividade ao projeto.
 
 ## Desenvolvedor 
 <span style="font-size: larger;">**Diego Chagas**</span>
